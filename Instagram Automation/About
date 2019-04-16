@@ -1,0 +1,4 @@
+- C# .NET Core solution.
+- Demonstrates use of microservices with use of NServiceBus messaging framework.
+- Data Access using Entity Framework.
+- Swagger integration in Web API.
