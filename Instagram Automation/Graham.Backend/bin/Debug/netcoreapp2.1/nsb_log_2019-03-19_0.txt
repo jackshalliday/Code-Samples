@@ -1,0 +1,3 @@
+﻿2019-03-19 20:32:38.053 INFO  DefaultFactory Logging to 'C:\Users\jackhalliday\source\repos\Graham\Graham.Backend\bin\Debug\netcoreapp2.1\' with level Info
+2019-03-19 20:32:38.781 INFO  NServiceBus.LicenseManager No valid license could be found. Falling back to trial license with start date '2019-03-06'.
+

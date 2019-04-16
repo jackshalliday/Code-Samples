@@ -1,0 +1,16 @@
+﻿2019-03-18 18:37:55.148 INFO  DefaultFactory Logging to 'C:\Users\jackhalliday\source\repos\Graham\Graham.Backend\bin\Debug\netcoreapp2.1\' with level Info
+2019-03-18 18:37:59.337 INFO  NServiceBus.LicenseManager No valid license could be found. Falling back to trial license with start date '2019-03-06'.
+
+2019-03-18 18:40:49.741 INFO  DefaultFactory Logging to 'C:\Users\jackhalliday\source\repos\Graham\Graham.Backend\bin\Debug\netcoreapp2.1\' with level Info
+2019-03-18 18:40:52.858 INFO  NServiceBus.LicenseManager No valid license could be found. Falling back to trial license with start date '2019-03-06'.
+
+2019-03-18 18:56:02.807 INFO  DefaultFactory Logging to 'C:\Users\jackhalliday\source\repos\Graham\Graham.Backend\bin\Debug\netcoreapp2.1\' with level Info
+2019-03-18 18:56:03.965 INFO  NServiceBus.LicenseManager No valid license could be found. Falling back to trial license with start date '2019-03-06'.
+
+2019-03-18 21:30:06.291 INFO  DefaultFactory Logging to 'C:\Users\jackhalliday\source\repos\Graham\Graham.Backend\bin\Debug\netcoreapp2.1\' with level Info
+2019-03-18 21:30:07.358 INFO  NServiceBus.LicenseManager No valid license could be found. Falling back to trial license with start date '2019-03-06'.
+
+2019-03-18 21:30:57.819 INFO  Graham.Backend.Handlers.InstagramAccount.InstagramAccountAddedHandler Received InstagramAccountAdded, InstagramAccountId = 10
+2019-03-18 21:31:18.346 INFO  Graham.Messages.Events.InstagramAccount.InstagramAccountAdded Received ValidateInstagramAccountPassword, InstagramAccountId = 10
+2019-03-18 21:31:20.277 INFO  Graham.Backend.Handlers.Python.ExecutePythonScriptsHandler Received InstagramAccountAdded, InstagramAccountId = 10
+2019-03-18 21:31:29.540 INFO  Graham.Messages.Events.InstagramAccount.InstagramAccountAdded Received InstagramAccountLoginSuccessful, InstagramAccountId = 10
