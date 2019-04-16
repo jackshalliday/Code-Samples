@@ -1,0 +1,10 @@
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\bin\Debug\Graham.Messages.dll
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\bin\Debug\Graham.Messages.pdb
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\bin\Debug\NServiceBus.Core.dll
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\bin\Debug\NServiceBus.Core.pdb
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\bin\Debug\NServiceBus.Core.xml
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\obj\Debug\Graham.Messages.csprojAssemblyReference.cache
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\obj\Debug\Graham.Messages.csproj.CoreCompileInputs.cache
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\obj\Debug\Graham.Messages.csproj.CopyComplete
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\obj\Debug\Graham.Messages.dll
+C:\Users\jackhalliday\source\repos\Graham\Graham.Messages\obj\Debug\Graham.Messages.pdb
