@@ -1,0 +1,26 @@
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p>
+      <b>Commented by: <%= comment_author(comment) %> at <%= comment_date_created(comment)%></b>
+    </p>
+    <p>
+      <%= comment.content %>
+    </p>
+    <p>
+      <span class="edit">
+        <% if comment_author(comment) == current_user.username %>
+          <%= link_to edit_post_comment_path(post, comment) do %>
+            <button class="btn btn-primary btn-xs">Edit</button>
+          <% end %>
+            <%= link_to post_comment_path(post, comment),  method: :delete,
+                        data: { confirm: 'Are you sure?' } do %>
+            <button class="btn btn-danger btn-xs">Delete!</button>
+          <% end %>
+        <% end %>
+      </span>
+    </p>
+
+
+  </div>
+</div>

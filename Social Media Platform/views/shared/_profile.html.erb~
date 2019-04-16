@@ -1,0 +1,22 @@
+<div class="col-xs-12 col-md-2" id="profile">
+  <!-- PROFILE INFORMATION -->
+  <div id="profile_info">
+    <div id="profile_name">
+      <h3>Hi, <%= user.username %></h3>
+      <div id="profile_picture">
+        <%= image_tag(user.image) %>
+      </div>
+      <br>
+      <div id="profile_followers">
+        Friends
+      </div>
+      <br>
+      <div id="profile_bio">
+        <i>
+          <%= user.bio %>
+        </i>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>

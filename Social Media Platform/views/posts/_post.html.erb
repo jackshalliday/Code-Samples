@@ -1,0 +1,94 @@
+<li class="timeline-inverted">
+
+  <!-- PROFILE PIC -->
+  <div class="timeline-badge default"><%= post.author.neo_id %></div>
+
+  <div class="timeline-panel">
+    <div class="timeline-heading">
+
+      <!-- TAGUP/TAGDOWN RATING -->
+      <div class="rating pull-right">
+        <%= button_to upvote_post_path(post), class: 'btn btn-default', method: 'put', remote: true do %>
+            <%= image_tag 'tagup.png', width: 20 %>
+        <% end %>
+
+        <span style="display: block; text-align: center; "><%= post.rank %></span>
+
+        <%= button_to downvote_post_path(post), class: 'btn btn-default', method: 'put', remote: true do %>
+            <%= image_tag 'tagdown.png', width: 20 %>
+        <% end %>
+      </div>
+
+      <!-- POST TITLE -->
+      <span class="h4 inline"><%= post.title %></span>
+
+    </div>
+    <div class="timeline-body" style="padding-right: 60px;">
+
+      <!-- POST BODY-->
+      <div id="post_body">
+        <br>
+        <%= simple_format( truncate(post.content, length: 300, separator: ' ') {link_to 'Read more', post}) %><br>
+      </div>
+
+    </div>
+    <hr>
+    <div class="col-xs-12" style="padding-right: 0; padding-bottom: 0">
+
+      <!-- OPTIONS DROPDOWN -->
+      <div class="btn-group inline pull-right">
+        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"
+                style="border: 0 none;">
+                    <span class="glyphicon glyphicon-chevron-down" style="display: block; text-align: center; color: grey">
+
+                    </span>
+        </button>
+
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Follow User</a></li>
+          <li><a href="#">Save Post</a></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Report', flag_post_path(post), method: :put, data: { confirm: 'Are you sure to report this post?' }, remote: true %></li>
+        </ul>
+
+      </div>
+
+      <!-- Time Posted (e.g. would link to viewPost[id].comments -->
+        <span class="inline pull-left">
+          <%= post_date_created(post) %>
+        </span>
+
+      <!-- COMMENTS (e.g. would link to viewPost[id].comments -->
+
+        <span class="inline pull-right">
+          <%= link_to( post) do %>
+              <%= get_comments_count(post) %> Comments
+          <% end %>
+        </span>
+
+      <!-- TAGS -->
+        <span class="inline pull-right " style="padding-right: 15px">
+
+          <script>
+            $(document).ready(function () {
+              $('[data-toggle="popover"]').popover({html: true});
+            });
+          </script>
+
+          <!-- retrieve tags to here -->
+          <a data-toggle="popover" data-placement="bottom" data-content="
+          <a href='search.php'>#tag1</a>
+          <a href='search.php'>#tag2</a>
+          <a href='search.php'>#tag3</a>
+          <a href='search.php'>#tag4</a>
+          <a href='search.php'>#tag5</a>
+          <a href='search.php'>#tag6</a>
+          " style="color: grey"><span class="glyphicon glyphicon-tags"></span></a>
+
+        </span>
+
+    </div>
+
+
+  </div>
+</li>

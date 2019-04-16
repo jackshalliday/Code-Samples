@@ -1,0 +1,18 @@
+<div class="row">
+  <h2>Comments</h2>
+</div>
+<div class="row">
+  <% @comments.each do |comment| %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <b><%= post_author(comment) %></b><br>
+          <%= simple_format(comment.content) %><br>
+          <%= link_to 'Show', [@post, comment] %>
+        </div>
+      </div>
+  <% end %>
+</div>
+<div class="row">
+  <%= link_to('Back', @post) %><br>
+  <%= link_to( 'New Comment', new_post_comment_path(@post) ) %>
+</div>

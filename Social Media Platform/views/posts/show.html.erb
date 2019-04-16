@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <b><%= post_author(@post)+' : '+ post_date_created(@post)%> </b>
+    <p><%= simple_format(@post.content) %></p>
+
+    <% if post_date_created(@post) != post_date_updated(@post) %>
+        <i>Updated at <%= post_date_updated(@post) %></i><br>
+    <% end %>
+    <span class="edit">
+        <% if post_author(@post) == current_user.username %>
+          <%= link_to edit_post_path(@post) do %>
+            <button class="btn btn-primary btn-xs">Edit</button>
+          <% end %>
+          <%= link_to @post,  method: :delete,
+                      data: { confirm: 'Are you sure?' } do %>
+            <button class="btn btn-danger btn-xs">Delete!</button>
+          <% end %>
+        <% end %>
+    </span>
+
+  </div>
+  <div class="panel-body">
+    <strong>Comments</strong><br>
+    <% @post.comments.each do |comment| %>
+      <%= render partial: 'comments/comment', locals: {post: @post, comment: comment} %>
+    <% end %>
+    <%= link_to( 'New Comment', new_post_comment_path(@post) ) %><br>
+    <%= link_to( 'Back ', posts_path ) %>
+  </div>
+</div>
+
+

@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <b><%= comment_author(@comment)+' : '+ comment_date_created(@comment)%> </b>
+    <p><%= simple_format(@comment.content) %></p>
+
+    <% if comment_date_created(@comment) != comment_date_updated(@comment) %>
+        <i>Updated at <%= comment_date_updated(@comment) %></i><br>
+    <% end %>
+    <span class="edit">
+        <% if @comment.author == current_user %>
+          <%= link_to edit_post_path(@post, @comment) do %>
+            <button class="btn btn-primary btn-xs">Edit</button>
+          <% end %>
+          <%= link_to [@post, @comment],  method: :delete,
+                      data: { confirm: 'Are you sure?' } do %>
+            <button class="btn btn-danger btn-xs">Delete!</button>
+          <% end %>
+        <% end %>
+    </span>
+    <%= link_to( 'Back', post_comments_path ) %>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div id="navbar" class="collapse navbar-collapse">
+  <%- if user_signed_in? %>
+    <form class="navbar-form navbar-left" role="search" method="get" action="/search">
+      <div class="form-group">
+        <input id="q" class="form-control" type="search" name="q" placeholder="Search">
+      </div>
+
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+
+      <button class="btn btn-default" type="submit">
+        <span class='glyphicon glyphicon-search'></span>
+      </button>
+    </form>
+  <% end -%>
+
+  <ul class="nav navbar-nav navbar-right">
+    <%- if user_signed_in? %>
+      <li><%= link_to('Profiles', profiles_path) %></li>
+      <li><%= link_to('Popular', posts_path) %></li>
+
+      <%- if current_user.is_admin?%>
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><%= link_to('User List', '/admin/user_list') %></li>
+          </ul>
+        </li>
+      <% end -%>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account <span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu">
+          <li><%= link_to('Edit Account', edit_user_registration_path) %></li>
+          <li><%= link_to('Settings', profile_path(current_user)) %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
+        </ul>
+      </li>
+    <% else %>
+      <li><%= link_to('Sign In', new_user_session_path) %></li>
+      <li><%= link_to('Sign Up', new_user_registration_path) %></li>
+    <% end -%>
+  </ul>
+</div>
+

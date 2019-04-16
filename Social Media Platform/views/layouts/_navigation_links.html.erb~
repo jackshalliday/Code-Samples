@@ -1,0 +1,37 @@
+<%# add navigation links to this file %>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <%- if !user_signed_in? %>
+    <ul class="nav navbar-nav">
+      <li><%= link_to('Sign In', new_user_session_path) %></li>
+      <li><%= link_to('Sign Up', new_user_registration_path) %></li>
+    </ul>
+  <% else %>
+      <ul class="nav navbar-nav navbar-left">
+        
+        <%- if current_user.is_admin?%>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to('User List', '/admin/user_list') %></li>
+            </ul>
+          </li>
+        <%- end %>
+      </ul>
+    <ul class="nav navbar-nav navbar-right">
+			<li><%=link_to('Posts', posts_path) %></li>
+			<li><%=link_to('Profile', @user.shared_profile_path) %></li>
+			<li><%=link_to('Popular', posts_path) %></li>
+			<li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to('Edit Account', edit_user_registration_path)%></li>
+          <li role="separator" class="divider"></li>
+					<li><%=link_to('Settings', posts_path) %></li>
+          <li role="separator" class="divider"></li>
+          <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete)%></li>
+        </ul>
+      </li>
+    </ul>
+  <% end -%>
+</div>
+

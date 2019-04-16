@@ -1,0 +1,24 @@
+
+<h1>Users </h1>
+<ul class="media-list">
+  <% @profiles.each do |user|%>
+
+    <li class="media">
+      <div class="media-left">
+        <%= image_tag(user.avatar.url(:thumb)) %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= user.username %><br>
+          Number of posts: <%= get_num_of_posts(user) %>
+        </h4>
+        <hr>
+        <%= user.bio %>
+        <hr>
+        <%= link_to('@'+user.username, profile_path(user))%>
+      </div>
+    </li>
+    <hr>
+  <% end %>
+  <%= paginate @profiles %>
+</ul>

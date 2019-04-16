@@ -1,0 +1,30 @@
+<h1>Search</h1>
+
+<%= form_for '/search', method: :get do |f| %>
+    <p>
+      <%= f.label "Search for" %>
+      <%= text_field_tag :q, params[:q] %>
+      <%= submit_tag "Go", name: nil %>
+    </p>
+<% end %>
+
+<ul>
+  <%- if !@posts.empty? %>
+    <h2>Posts:</h2>
+    <% @posts.each do |post| %>
+      <li>
+        <h3><%= link_to(post.title, post) %></h3>
+      </li>
+    <% end %>
+  <% end -%>
+
+  <%- if !@comments.empty? %>
+    <h2>Comments:</h2>
+    <% @comments.each do |comment| %>
+      <li>
+        <h3><%= link_to(comment.content, comment.post) %></h3>
+      </li>
+    <% end %>
+  <% end -%>
+</ul>
+
